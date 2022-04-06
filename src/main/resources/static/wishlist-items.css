@@ -1,0 +1,40 @@
+#items-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.item {
+    display: flex;
+    padding: 10px 0 5px 0;
+    width: 311px;
+    border-bottom: 1px solid black;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+form > input {
+    margin: 5px 0 5px 0;
+    font-size: 16px;
+}
+
+.headline {
+    display: flex;
+}
+
+.headline > :first-child {
+    margin-right: 50px;
+}
+
+.item-from-db {
+    color: white;
+}
+
+.item > div {
+    min-width: 100px;
+}
+

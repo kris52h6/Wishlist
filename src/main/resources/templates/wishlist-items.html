@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" th:href="@{/navbar.css}" href="../static/navbar.css">
+    <link rel="stylesheet" th:href="@{/style.css}" href="../static/style.css">
+    <link rel="stylesheet" th:href="@{/wishlist-items.css}" href="../static/wishlist-items.css">
+    <title>Wishlist items</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <img src="/images/peterp.png" alt="logo">
+                <p class="title">Ønskeøen</p>
+                <a class="link" th:href="@{/getWishlist}">Wishlist</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1>Wishlist items:</h1>
+        <section id="items-wrapper">
+            <div class="left">
+                <div class="headline">
+                    <p>Name:</p>
+                    <p>Price:</p>
+                </div>
+                <div class="item" th:each="item: ${items}">
+                    <div class="item-name">
+                        <span class="item-from-db" th:text="${item.getName()}"></span>
+                    </div>
+                    <div class="item-price">
+                        <span class="item-from-db" th:text="${item.getPrice()}"></span>
+                    </div>
+
+                <div class="wishlist-buttons">
+                    <button class="general-button" type="button">
+                        <a th:href="@{/wishlist-update-item?id={id}(id=${item.getId()})}">Update</a>
+                    </button>
+                    <button class="general-button" type="button">
+                        <a th:href="@{/delete-item?id={id}(id=${item.getId()})}">Delete</a>
+                    </button>
+                </div>
+            </div>
+            </div>
+            <div class="right">
+                <h2>Add item to wishlist</h2>
+                    <form method="POST" action="/addItemToWishlist">
+                        <input type="text" hidden name = "wishlistId" th:value="${wishlistId}">
+                        <label for="item-name">Name: </label>
+                        <input id="item-name" type="text" name="item-name" placeholder="item name"/>
+                        <label for="item-price">Price: </label>
+                        <input id="item-price" type="text" name="item-price" placeholder="item price"/>
+                        <label for="item-link">Link: </label>
+                        <input id="item-link" type="text" name="item-link" placeholder="item link">
+                        <input type="submit">
+                    </form>
+                </section>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

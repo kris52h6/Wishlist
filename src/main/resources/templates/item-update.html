@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" th:href="@{/navbar.css}" href="../static/navbar.css">
+    <link rel="stylesheet" th:href="@{/style.css}" href="../static/style.css">
+    <link rel="stylesheet" th:href="@{/wishlist-items.css}" href="../static/wishlist-items.css">
+    <title>Wishlist items</title>
+</head>
+<body>
+<header>
+    <nav>
+        <div class="nav-wrapper">
+            <img src="/images/peterp.png" alt="logo">
+            <p class="title">Ønskeøen</p>
+            <a class="link" th:href="@{/getWishlist}">Wishlist</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section id="item-wrapper">
+        <h1>Rediger ønske:</h1>
+        <div class="item">
+        <form method="post" action="/update-item">
+            <input type="text" hidden name = "id" th:value="${itemInfo.get(0)}">
+            <input type="text" name="name" th:value="${itemInfo.get(1)}">
+            <input type="text" name="price" th:value="${itemInfo.get(2)}">
+            <input type="text" name="link" th:value="${itemInfo.get(3)}">
+            <input type="submit" name="submit">
+        </form>
+        </div>
+    </section>
+</main>
+
+</body>
+</html>

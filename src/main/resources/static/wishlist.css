@@ -1,0 +1,58 @@
+
+.header {
+    display: flex;
+    justify-content: center;
+    padding: 40px 0 40px 0;
+}
+
+.header {
+    font-family: "Helvetica Neue", sans-serif;
+}
+
+#wishlist-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-bottom: 20px;
+}
+
+.wishlist {
+    min-width: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 20px;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+}
+
+span {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.create-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+
+
+.create-wrapper .general-button {
+    font-size: 20px;
+}
+
+
+/*
+.wishlist-img {
+    width: 50px;
+    height: 50px;
+}
+*/
+
+
+
+

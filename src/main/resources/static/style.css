@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", sans-serif;
+}
+
+main {
+    background-color: #85DCBA;
+    padding: 10px;
+    height: 100vh;
+}
+
+.general-button {
+    background-color: #41B3A3;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.general-button:hover {
+    opacity: 80%;
+}
+

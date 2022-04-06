@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" th:href="@{/navbar.css}" href="../static/navbar.css">
+    <link rel="stylesheet" th:href="@{/style.css}" href="../static/style.css">
+    <link rel="stylesheet" th:href="@{/createwl.css}" href="../static/createwl.css">
+    <title>Create new wishlist</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <img src="/images/peterp.png" alt="logo">
+                <p class="title">Ønskeøen</p>
+                <a class="link" th:href="@{/getWishlist}">Wishlist</a>
+            </div>
+        </nav>
+    </header>
+
+<main>
+    <section class="create-wishlist">
+        <h1>Create new wishlist</h1>
+        <form method="POST" action="/createNewWishlist">
+            <label for="wishlist-name">Name: </label>
+            <input id="wishlist-name" type="text" name="wl-name" placeholder="wishlist name"/>
+            <label for="wishlist-link">URL: (not finished)</label>
+            <input id="wishlist-link" type="text" name="wl-link" placeholder="wishlist link"/>
+            <label for="wishlist-userid">ID:</label>
+            <input id="wishlist-userid" type="text" name="wl-userid" placeholder="userid"/>
+            <input type="submit">
+        </form>
+    </section>
+</main>
+
+</body>
+</html>

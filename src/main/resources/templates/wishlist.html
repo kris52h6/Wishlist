@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>My wishlists</title>
+    <link rel="stylesheet" th:href="@{/navbar.css}" href="../static/navbar.css">
+    <link rel="stylesheet" th:href="@{/style.css}" href="../static/style.css">
+    <link rel="stylesheet" th:href="@{/wishlist.css}" href="../static/wishlist.css">
+
+</head>
+
+
+<body>
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <img src="/images/peterp.png" alt="logo">
+                <p class="title">Ønskeøen</p>
+                <a class="link" th:href="@{/getWishlist}">Wishlist</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="header">My wishlists</h1>
+
+        <section id="wishlist-wrapper">
+            <div class="wishlist" th:each="wishlist: ${wishlists}">
+                <span th:text="${wishlist.getName()}"></span>
+                <a th:href="@{/wishlist?id={id}(id=${wishlist.getId()})}">Show wishlist</a>
+                <div class="wishlist-buttons">
+
+                    <button class="general-button" type="button">Update</button>
+                    <button class="general-button" type="button">
+                        <a th:href="@{/deleteWishlist?id={id}(id=${wishlist.getId()})}">Delete</a>
+                    </button>
+                </div>
+            </div>
+
+        </section>
+
+        <div class="create-wrapper">
+            <button class="general-button" type="button">
+                <a th:href="@{createWishlist}">Create new wishlist</a>
+            </button>
+        </div>
+    </main>
+</body>
+</html>
