@@ -53,9 +53,4 @@ public class UserController
         userRep.addNewUser(username, password, firstname);
         return "index";
     }
-
-    @GetMapping("/alextest")
-    public String alextest(){
-        return "alextest";
-    }
 }
