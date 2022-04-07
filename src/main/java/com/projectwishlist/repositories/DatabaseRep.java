@@ -41,7 +41,6 @@ public class DatabaseRep {
 
         String sql = "SELECT * FROM projectwishlist." + table +
                 " WHERE " + rowIdName + "='" + dataId + "';";
-        System.out.println(sql);
         return getResultSet(sql);
     }
 
@@ -56,7 +55,6 @@ public class DatabaseRep {
         {
             e.printStackTrace();
         }
-        System.out.println(sqlString);
     }
 
     public void deleteData(String table,String rowId, int id){

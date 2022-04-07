@@ -53,8 +53,6 @@ public class UserRep {
          String sql = "SELECT * FROM projectwishlist." + table +
                  " WHERE " + rows.get(1) + " = " + "'" + usernameInput + "' AND " + rows.get(2) + " = '" + passwordInput + "' ;";
 
-         System.out.println(sql);
-
              ResultSet resultSet = databaseRep.getResultSet(sql);
 
          int userId = -1;
