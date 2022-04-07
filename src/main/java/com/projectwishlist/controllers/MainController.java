@@ -7,6 +7,8 @@ import com.projectwishlist.services.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 public class MainController
 {
@@ -21,4 +23,12 @@ public class MainController
     public String index() {
         return "index";
     }
+
+
+   @GetMapping("/sign-out")
+    public String signOut(HttpSession session){
+       session.setAttribute("userId",-1);
+       session.setAttribute("loggedInUsername",null);
+       return ("redirect:/");
+   }
 }

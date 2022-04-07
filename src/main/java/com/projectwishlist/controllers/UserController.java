@@ -23,7 +23,6 @@ public class UserController
         UserRep userRep = new UserRep();
         String username = data.getParameter("username");
         String password = data.getParameter("password");
-
         System.out.println(data.getParameter("username"));
         System.out.println(data.getParameter("password"));
 
