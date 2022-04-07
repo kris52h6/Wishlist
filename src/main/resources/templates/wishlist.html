@@ -17,8 +17,10 @@
                 <img src="/images/peterp.png" alt="logo">
                 <p class="title">Ønskeøen</p>
                 <a class="link" th:href="@{/getWishlist}">Wishlist</a>
+                <a class="link" th:href="@{/getWishlist}">Wishlist</a>
             </div>
         </nav>
+        <a class="link" th:href="@{/sign-out}">logout</a>
     </header>
 
     <main>
@@ -29,8 +31,6 @@
                 <span th:text="${wishlist.getName()}"></span>
                 <a th:href="@{/wishlist?id={id}(id=${wishlist.getId()})}">Show wishlist</a>
                 <div class="wishlist-buttons">
-
-                    <button class="general-button" type="button">Update</button>
                     <button class="general-button" type="button">
                         <a th:href="@{/deleteWishlist?id={id}(id=${wishlist.getId()})}">Delete</a>
                     </button>

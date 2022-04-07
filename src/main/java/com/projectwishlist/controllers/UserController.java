@@ -23,11 +23,6 @@ public class UserController
         UserRep userRep = new UserRep();
         String username = data.getParameter("username");
         String password = data.getParameter("password");
-
-        System.out.println(data.getParameter("username"));
-        System.out.println(data.getParameter("password"));
-
-
         try{
             int userId = userRep.authenticateUser(username, password);
             if(userId > 0){
@@ -40,7 +35,7 @@ public class UserController
         } catch (Exception e){
             e.printStackTrace();
         }
-        return "fejl";
+        return "redirect:/error";
     }
 
     @PostMapping("/creatNewUser")
@@ -55,8 +50,8 @@ public class UserController
         return "index";
     }
 
-    @GetMapping("/alextest")
-    public String alextest(){
-        return "alextest";
+    @GetMapping("error")
+    public String erorpage(){
+        return "error";
     }
 }

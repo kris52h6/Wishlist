@@ -44,9 +44,7 @@ public class ItemRep {
         String sql = "SELECT " + rowsString + " FROM projectwishlist." + table
                 + " WHERE wishlist_id = " + wishlistId + " ;";
 
-        /*String sql = "SELECT " + rowsString + " FROM projectwishlist." + table + " INNER JOIN projectwishlist.wishlistitems ON item.item_id = wishlistitems.item_id WHERE wishlistitems.wishlist_id = " + wishlistId + " ;";*/
         ResultSet resultSet = databaseRep.getResultSet(sql);
-        System.out.println(sql);
         ArrayList<Item> items = new ArrayList<>();
         int item_id = -1;
         String item_name = null;

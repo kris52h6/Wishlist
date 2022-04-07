@@ -38,7 +38,6 @@ public class ItemController {
 
     @GetMapping("/delete-item")
     public String deleteItem(@RequestParam int id){
-        System.out.println("test delete");
         itemService.deleteItem(id);
         return "redirect:/getWishlist";
     }

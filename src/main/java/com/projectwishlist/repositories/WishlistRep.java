@@ -89,7 +89,6 @@ public class WishlistRep {
                 String col2 = resultSet.getString("wishlist_name");
                 String col3 = resultSet.getString("wishlist_link");
                 String col4 = resultSet.getString("user_id");
-                System.out.println(col1 + ", " + col2 + ", " + col3 + ", " + col4);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -106,7 +105,6 @@ public class WishlistRep {
         String wishlistLink = null;
         Wishlist wishlist = null;
 
-
         try {
             while(resultSet.next()) {
                 wishlistId = resultSet.getInt(rows.get(0));
@@ -121,14 +119,6 @@ public class WishlistRep {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println(listOfWishlists);
         return listOfWishlists;
     }
-
-    public static void main(String[] args) {
-
-    }
-
-
-
 }
