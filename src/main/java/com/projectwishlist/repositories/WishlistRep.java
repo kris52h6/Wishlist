@@ -32,15 +32,16 @@ public class WishlistRep {
         rows.add("user_id");
     }
 
-    public void prepareWishlist(WebRequest dataFromForm) {
+    public void prepareWishlist(WebRequest dataFromForm, int userId) {
         rows.remove(0);
         String newRows = databaseRep.commaSeperateRows(rows);
         ArrayList<String> data = new ArrayList<>();
         rows.add(0,"wishlist_id"); // resets rows
 
+
         data.add(dataFromForm.getParameter("wl-name"));
         data.add(dataFromForm.getParameter("wl-link"));
-        data.add(dataFromForm.getParameter("wl-userid"));
+        data.add(Integer.toString(userId));
         String convertedData = databaseRep.commaSeperateData(data);
 
         insertWishlistIntoDB(newRows, convertedData);

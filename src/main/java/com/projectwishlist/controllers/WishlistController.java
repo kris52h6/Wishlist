@@ -52,8 +52,9 @@ public class WishlistController {
     }
 
     @PostMapping("/createNewWishlist")
-    public String createNewWishlist(WebRequest dataFromForm) {
-        wishListRep.prepareWishlist(dataFromForm);
+    public String createNewWishlist(WebRequest dataFromForm, HttpSession session) {
+        int userId = (int)session.getAttribute("userId");
+        wishListRep.prepareWishlist(dataFromForm, userId);
         return "redirect:/getWishlist";
 
     }
