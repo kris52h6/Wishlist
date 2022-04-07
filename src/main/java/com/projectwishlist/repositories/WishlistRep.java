@@ -104,7 +104,6 @@ public class WishlistRep {
         String wishlistLink = null;
         Wishlist wishlist = null;
 
-
         try {
             while(resultSet.next()) {
                 wishlistId = resultSet.getInt(rows.get(0));

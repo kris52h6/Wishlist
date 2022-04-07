@@ -35,7 +35,7 @@ public class UserController
         } catch (Exception e){
             e.printStackTrace();
         }
-        return "redirect:/";
+        return "redirect:/error";
     }
 
     @PostMapping("/creatNewUser")
@@ -48,5 +48,10 @@ public class UserController
 
         userRep.addNewUser(username, password, firstname);
         return "index";
+    }
+
+    @GetMapping("error")
+    public String erorpage(){
+        return "error";
     }
 }
