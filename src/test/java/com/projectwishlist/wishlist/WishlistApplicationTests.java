@@ -1,4 +1,4 @@
-package com.example.wishlist;
+package com.projectwishlist.wishlist;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
