@@ -34,8 +34,6 @@ public class WishlistController {
     public String getWishlist(Model model, HttpSession session) {
         int userId = (int)session.getAttribute("userId");
         if(userId > 0) {
-            System.out.println();
-            System.out.println(userId);
             ArrayList<Wishlist> list = wishListRep.getAllWishlistsFromUser(userId);
             model.addAttribute("wishlists", list);
             return "wishlist";
@@ -47,7 +45,6 @@ public class WishlistController {
     @GetMapping("/createWishlist")
     public String createWishlist(HttpSession session) {
         String loggedInUser = (String) session.getAttribute("loggedInUser");
-
         return "create-wishlist";
     }
 

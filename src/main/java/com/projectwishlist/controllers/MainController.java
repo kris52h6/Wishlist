@@ -12,12 +12,6 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class MainController
 {
-    private DatabaseRep databaseRep;
-
-    public MainController() {
-        this.databaseRep = new DatabaseRep();;
-    }
-
     //Controller methods
     @GetMapping("/")
     public String index() {

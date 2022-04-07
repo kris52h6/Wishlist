@@ -25,8 +25,6 @@ public class UserController
         String password = data.getParameter("password");
         System.out.println(data.getParameter("username"));
         System.out.println(data.getParameter("password"));
-
-
         try{
             int userId = userRep.authenticateUser(username, password);
             if(userId > 0){
@@ -39,7 +37,7 @@ public class UserController
         } catch (Exception e){
             e.printStackTrace();
         }
-        return "fejl";
+        return "redirect:/";
     }
 
     @PostMapping("/creatNewUser")
