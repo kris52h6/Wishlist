@@ -1,17 +1,12 @@
 package com.projectwishlist.controllers;
 
-import com.projectwishlist.models.User;
 import com.projectwishlist.repositories.UserRep;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.context.request.WebRequest;
 
 import javax.servlet.http.HttpSession;
-import java.security.SecureRandom;
-import java.sql.SQLException;
-import java.util.ArrayList;
 
 @Controller
 public class UserController
@@ -35,7 +30,7 @@ public class UserController
         } catch (Exception e){
             e.printStackTrace();
         }
-        return "redirect:/error";
+        return "redirect:/loginerror";
     }
 
     @PostMapping("/creatNewUser")
@@ -50,8 +45,8 @@ public class UserController
         return "index";
     }
 
-    @GetMapping("error")
+    @GetMapping("/loginerror")
     public String erorpage(){
-        return "error";
+        return "login-error";
     }
 }
